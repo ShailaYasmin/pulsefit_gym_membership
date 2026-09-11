@@ -112,7 +112,3 @@ Foreign keys use `RESTRICT` (not `CASCADE`) wherever deleting the parent row wou
 ## A real bug found during testing
 
 The original `sql/seed.sql` import (`mysql -u root < sql/seed.sql`) silently double-encoded the handful of rows containing an em/en dash, because the MySQL CLI's default connection charset is `latin1` unless told otherwise, even though the database and columns are `utf8mb4`. This produced garbled text (`â€"` instead of `–`) on the live pages. It was caught by comparing the rendered page text against the source data, root-caused by inspecting the raw response bytes with `curl | xxd`, fixed by rewriting the affected rows through PDO (which uses the correct charset — see `includes/db.php`), and documented in `sql/seed.sql` so it can't happen again on a fresh import. See `sql/fix_encoding.php` for the fix script.
-
-## Individual contribution
-
-This is listed as a group assessment (3 students) in the brief. The codebase above was built as a complete, working submission; how contribution/authorship is divided and documented for the "Individual Contribution" submission is between the team and hasn't been filled in here, since that depends on the real team's actual work split.
