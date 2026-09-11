@@ -1,0 +1,3 @@
+.DS_Store
+*.log
+includes/config.local.php
