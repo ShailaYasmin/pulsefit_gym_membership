@@ -2,6 +2,11 @@
 -- PulseFit Gym — Seed data
 -- Run after schema.sql. User accounts are seeded separately by
 -- sql/seed_users.php since passwords must be hashed by PHP.
+--
+-- IMPORTANT: this file contains UTF-8 characters (–, —). Import it
+-- with the client charset forced to utf8mb4, or the MySQL CLI's
+-- latin1 default will silently double-encode them:
+--   mysql --default-character-set=utf8mb4 -u root < sql/seed.sql
 -- ============================================================
 
 USE pulsefit_gym;
