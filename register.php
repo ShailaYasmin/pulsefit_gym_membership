@@ -99,13 +99,13 @@ require __DIR__ . '/includes/header.php';
 
           <div class="field <?= isset($errors['full_name']) ? 'has-error' : '' ?>">
             <label for="full_name">Full Name <span class="required">*</span></label>
-            <input type="text" id="full_name" name="full_name" value="<?= e($old['full_name']) ?>" required minlength="2" autocomplete="name">
+            <input type="text" id="full_name" name="full_name" value="<?= e($old['full_name']) ?>" placeholder="Jordan Smith" required minlength="2" autocomplete="name">
             <?php if (isset($errors['full_name'])): ?><p class="field-error" style="display:flex;"><?= e($errors['full_name']) ?></p><?php endif; ?>
           </div>
 
           <div class="field <?= isset($errors['email']) ? 'has-error' : '' ?>">
             <label for="email">Email Address <span class="required">*</span></label>
-            <input type="email" id="email" name="email" value="<?= e($old['email']) ?>" required autocomplete="email">
+            <input type="email" id="email" name="email" value="<?= e($old['email']) ?>" placeholder="jordan@email.com" required autocomplete="email">
             <?php if (isset($errors['email'])): ?><p class="field-error" style="display:flex;"><?= e($errors['email']) ?></p><?php endif; ?>
           </div>
 
@@ -117,14 +117,14 @@ require __DIR__ . '/includes/header.php';
 
           <div class="field <?= isset($errors['password']) ? 'has-error' : '' ?>">
             <label for="password">Password <span class="required">*</span></label>
-            <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password">
+            <input type="password" id="password" name="password" placeholder="Create a password" required minlength="8" autocomplete="new-password">
             <p class="field-hint">At least 8 characters, with a letter and a number.</p>
             <?php if (isset($errors['password'])): ?><p class="field-error" style="display:flex;"><?= e($errors['password']) ?></p><?php endif; ?>
           </div>
 
           <div class="field <?= isset($errors['password_confirm']) ? 'has-error' : '' ?>">
             <label for="password_confirm">Confirm Password <span class="required">*</span></label>
-            <input type="password" id="password_confirm" name="password_confirm" required autocomplete="new-password">
+            <input type="password" id="password_confirm" name="password_confirm" placeholder="Re-enter your password" required autocomplete="new-password">
             <?php if (isset($errors['password_confirm'])): ?><p class="field-error" style="display:flex;"><?= e($errors['password_confirm']) ?></p><?php endif; ?>
           </div>
 

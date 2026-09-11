@@ -112,7 +112,7 @@ require __DIR__ . '/../includes/header.php';
               <div class="inline-form-grid">
                 <div class="field <?= isset($errors['name']) ? 'has-error' : '' ?>">
                   <label for="name">Class Name <span class="required">*</span></label>
-                  <input type="text" id="name" name="name" value="<?= e($editingClass['name'] ?? '') ?>" required>
+                  <input type="text" id="name" name="name" value="<?= e($editingClass['name'] ?? '') ?>" placeholder="e.g. HIIT Blast" required>
                   <?php if (isset($errors['name'])): ?><p class="field-error" style="display:flex;"><?= e($errors['name']) ?></p><?php endif; ?>
                 </div>
                 <div class="field <?= isset($errors['day_of_week']) ? 'has-error' : '' ?>">
@@ -143,7 +143,7 @@ require __DIR__ . '/../includes/header.php';
                 </div>
                 <div class="field <?= isset($errors['capacity']) ? 'has-error' : '' ?>">
                   <label for="capacity">Capacity <span class="required">*</span></label>
-                  <input type="number" id="capacity" name="capacity" min="1" value="<?= (int) ($editingClass['capacity'] ?? 20) ?>" required>
+                  <input type="number" id="capacity" name="capacity" min="1" placeholder="20" value="<?= (int) ($editingClass['capacity'] ?? 20) ?>" required>
                 </div>
               </div>
 

@@ -108,13 +108,13 @@ require __DIR__ . '/../includes/header.php';
 
               <div class="field <?= isset($profileErrors['full_name']) ? 'has-error' : '' ?>">
                 <label for="full_name">Full Name <span class="required">*</span></label>
-                <input type="text" id="full_name" name="full_name" value="<?= e($old['full_name']) ?>" required minlength="2">
+                <input type="text" id="full_name" name="full_name" value="<?= e($old['full_name']) ?>" placeholder="Your full name" required minlength="2">
                 <?php if (isset($profileErrors['full_name'])): ?><p class="field-error" style="display:flex;"><?= e($profileErrors['full_name']) ?></p><?php endif; ?>
               </div>
 
               <div class="field <?= isset($profileErrors['email']) ? 'has-error' : '' ?>">
                 <label for="email">Email Address <span class="required">*</span></label>
-                <input type="email" id="email" name="email" value="<?= e($old['email']) ?>" required>
+                <input type="email" id="email" name="email" value="<?= e($old['email']) ?>" placeholder="you@example.com" required>
                 <?php if (isset($profileErrors['email'])): ?><p class="field-error" style="display:flex;"><?= e($profileErrors['email']) ?></p><?php endif; ?>
               </div>
 
@@ -141,19 +141,19 @@ require __DIR__ . '/../includes/header.php';
 
               <div class="field <?= isset($passwordErrors['current_password']) ? 'has-error' : '' ?>">
                 <label for="current_password">Current Password <span class="required">*</span></label>
-                <input type="password" id="current_password" name="current_password" required autocomplete="current-password">
+                <input type="password" id="current_password" name="current_password" placeholder="Enter your current password" required autocomplete="current-password">
                 <?php if (isset($passwordErrors['current_password'])): ?><p class="field-error" style="display:flex;"><?= e($passwordErrors['current_password']) ?></p><?php endif; ?>
               </div>
 
               <div class="field <?= isset($passwordErrors['new_password']) ? 'has-error' : '' ?>">
                 <label for="new_password">New Password <span class="required">*</span></label>
-                <input type="password" id="new_password" name="new_password" required minlength="8" autocomplete="new-password">
+                <input type="password" id="new_password" name="new_password" placeholder="Create a new password" required minlength="8" autocomplete="new-password">
                 <?php if (isset($passwordErrors['new_password'])): ?><p class="field-error" style="display:flex;"><?= e($passwordErrors['new_password']) ?></p><?php endif; ?>
               </div>
 
               <div class="field <?= isset($passwordErrors['new_password_confirm']) ? 'has-error' : '' ?>">
                 <label for="new_password_confirm">Confirm New Password <span class="required">*</span></label>
-                <input type="password" id="new_password_confirm" name="new_password_confirm" required autocomplete="new-password">
+                <input type="password" id="new_password_confirm" name="new_password_confirm" placeholder="Re-enter your new password" required autocomplete="new-password">
                 <?php if (isset($passwordErrors['new_password_confirm'])): ?><p class="field-error" style="display:flex;"><?= e($passwordErrors['new_password_confirm']) ?></p><?php endif; ?>
               </div>
 

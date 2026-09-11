@@ -60,12 +60,12 @@ require __DIR__ . '/includes/header.php';
 
           <div class="field">
             <label for="email">Email Address <span class="required">*</span></label>
-            <input type="email" id="email" name="email" value="<?= e($oldEmail) ?>" required autocomplete="email">
+            <input type="email" id="email" name="email" value="<?= e($oldEmail) ?>" placeholder="you@example.com" required autocomplete="email">
           </div>
 
           <div class="field">
             <label for="password">Password <span class="required">*</span></label>
-            <input type="password" id="password" name="password" required autocomplete="current-password">
+            <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">Log In</button>

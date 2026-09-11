@@ -133,12 +133,12 @@ require __DIR__ . '/../includes/header.php';
               <div class="inline-form-grid">
                 <div class="field <?= isset($errors['name']) ? 'has-error' : '' ?>">
                   <label for="name">Plan Name <span class="required">*</span></label>
-                  <input type="text" id="name" name="name" value="<?= e($editingPlan['name'] ?? '') ?>" required>
+                  <input type="text" id="name" name="name" value="<?= e($editingPlan['name'] ?? '') ?>" placeholder="e.g. Gold" required>
                   <?php if (isset($errors['name'])): ?><p class="field-error" style="display:flex;"><?= e($errors['name']) ?></p><?php endif; ?>
                 </div>
                 <div class="field <?= isset($errors['price']) ? 'has-error' : '' ?>">
                   <label for="price">Price (AUD) <span class="required">*</span></label>
-                  <input type="number" id="price" name="price" min="0" step="1" value="<?= isset($editingPlan['price_cents']) ? (int) round($editingPlan['price_cents'] / 100) : '' ?>" required>
+                  <input type="number" id="price" name="price" min="0" step="1" placeholder="49" value="<?= isset($editingPlan['price_cents']) ? (int) round($editingPlan['price_cents'] / 100) : '' ?>" required>
                   <?php if (isset($errors['price'])): ?><p class="field-error" style="display:flex;"><?= e($errors['price']) ?></p><?php endif; ?>
                 </div>
                 <div class="field">
