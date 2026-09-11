@@ -70,7 +70,7 @@ require __DIR__ . '/../includes/header.php';
                         <form method="post" style="display:flex;gap:6px;align-items:center;">
                           <?= csrf_field() ?>
                           <input type="hidden" name="user_id" value="<?= (int) $u['id'] ?>">
-                          <select name="new_role" onchange="this.form.submit()" style="padding:6px 10px;font-size:0.8rem;">
+                          <select name="new_role" onchange="this.form.submit()" class="select-inline">
                             <option value="normal" <?= $u['role'] === 'normal' ? 'selected' : '' ?>>Normal</option>
                             <option value="member" <?= $u['role'] === 'member' ? 'selected' : '' ?>>Member</option>
                             <option value="admin" <?= $u['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>

@@ -1883,6 +1883,28 @@ section {
   background: var(--surface-2);
 }
 
+/* A <select> used standalone (e.g. inline in a table row), outside a .field wrapper */
+.select-inline {
+  background: var(--bg-alt);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.select-inline:hover {
+  border-color: var(--text-dim);
+}
+
+.select-inline:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 214, 10, 0.14);
+}
+
 .status-badge {
   display: inline-block;
   padding: 4px 12px;
