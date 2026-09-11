@@ -1,9 +1,12 @@
 <?php
 declare(strict_types=1);
 // Expects $pageTitle, $pageDescription, $activePage to be set by the including page.
+// $pageImage may optionally be set to a base_url()-relative image path for social sharing.
 $pageTitle       = $pageTitle       ?? SITE_NAME;
 $pageDescription = $pageDescription ?? 'PulseFit Gym is a boutique strength and conditioning studio offering modern equipment, expert coaching and flexible memberships.';
 $activePage      = $activePage      ?? '';
+$pageImage       = $pageImage       ?? 'images/hero-home.jpg';
+$canonicalUrl    = base_url($_SERVER['REQUEST_URI'] ?? '');
 $user            = current_user();
 ?><!DOCTYPE html>
 <html lang="en">
@@ -13,9 +16,44 @@ $user            = current_user();
 <title><?= e($pageTitle) ?></title>
 <meta name="description" content="<?= e($pageDescription) ?>">
 <meta name="author" content="Shaila Yasmin Erin">
-<link rel="canonical" href="<?= e(base_url($_SERVER['REQUEST_URI'] ?? '')) ?>">
+<link rel="canonical" href="<?= e($canonicalUrl) ?>">
 <link rel="icon" type="image/svg+xml" href="<?= e(base_url('images/favicon.svg')) ?>">
 <link rel="stylesheet" href="<?= e(base_url('css/style.css')) ?>">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:site_name" content="<?= e(SITE_NAME) ?>">
+<meta property="og:title" content="<?= e($pageTitle) ?>">
+<meta property="og:description" content="<?= e($pageDescription) ?>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="<?= e($canonicalUrl) ?>">
+<meta property="og:image" content="<?= e(base_url($pageImage)) ?>">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Structured data (schema.org) for the business, helps rich results in search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "PulseFit Gym",
+  "description": "Boutique strength and conditioning studio offering modern equipment, expert coaching and flexible gym memberships in Sydney.",
+  "url": "<?= e(base_url('index.php')) ?>",
+  "telephone": "+61212345678",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "88 Ironclad Lane",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "postalCode": "2000",
+    "addressCountry": "AU"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "18:00" }
+  ]
+}
+</script>
 </head>
 <body>
 

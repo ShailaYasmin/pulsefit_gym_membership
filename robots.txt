@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /member/
+Disallow: /includes/
+Disallow: /sql/
+
+Sitemap: /sitemap.php
