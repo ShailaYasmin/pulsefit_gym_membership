@@ -107,7 +107,7 @@ CREATE TABLE bookings (
   status        ENUM('booked','cancelled','attended') NOT NULL DEFAULT 'booked',
   created_at    TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-  FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE,
+  FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE RESTRICT,
   UNIQUE KEY uniq_booking (user_id, class_id, booking_date)
 ) ENGINE=InnoDB;
 
