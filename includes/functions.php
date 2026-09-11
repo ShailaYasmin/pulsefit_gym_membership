@@ -67,3 +67,17 @@ function format_date_nice(string $date): string
 {
     return date('D, j M Y', strtotime($date));
 }
+
+/** The next $count calendar dates (Y-m-d) that fall on the given weekday name, starting today. */
+function upcoming_dates_for_weekday(string $weekday, int $count = 4): array
+{
+    $dates = [];
+    $date = new DateTime('today');
+    while (count($dates) < $count) {
+        if ($date->format('l') === $weekday) {
+            $dates[] = $date->format('Y-m-d');
+        }
+        $date->modify('+1 day');
+    }
+    return $dates;
+}
