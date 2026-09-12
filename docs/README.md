@@ -115,4 +115,4 @@ The original `sql/seed.sql` import (`mysql -u root < sql/seed.sql`) silently dou
 
 ## Individual contribution
 
-This is listed as a group assessment (3 students) in the brief. The codebase above was built as a complete, working submission; how contribution/authorship is divided and documented for the "Individual Contribution" submission is between the team and hasn't been filled in here, since that depends on the real team's actual work split.
+This is listed as a group assessment (4 students) in the brief. The codebase above was built as a complete, working submission; how contribution/authorship is divided and documented for the "Individual Contribution" submission is between the team and hasn't been filled in here, since that depends on the real team's actual work split.
